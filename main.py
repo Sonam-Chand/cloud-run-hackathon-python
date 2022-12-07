@@ -31,6 +31,7 @@ def index():
 @app.route("/", methods=['POST'])
 def move():
     request.get_data()
+    print("******** testing ************")
     logger.info(request.json)
 
     return  moves[random.randrange(len(moves))]

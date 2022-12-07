@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = cloudbowl.samples.dotnet
+build_property.ProjectDir = /home/sonam_chand/cloud-run-hackathon-python/samples/dotnet/
