@@ -35,6 +35,10 @@ def move():
     logger.info(request.json)
 
     return  moves[random.randrange(len(moves))]
+    
+    # TODO add your implementation here to replace the random response
+    
+    
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
