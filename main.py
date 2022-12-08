@@ -40,10 +40,10 @@ def move():
     hit_stat=data['arena']['state'][url]['wasHit']
     my_score=data['arena']['state'][url]['score']
    # print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,x,y,direc,hit_stat,score))
-    for item in data['arena']['state']:
-        if item[key]==url:
+    for key,value in data['arena']['state'].item:
+        if key==url:
            pass
-        elif abs(item[value]['x']-my_x)==3 or abs(item[value]['y']-my_y)==3:
+        elif abs(value['x']-my_x)==3 or abs(value['y']-my_y)==3:
            return 'T'
         else:
             return  moves[random.randrange(len(moves))]
