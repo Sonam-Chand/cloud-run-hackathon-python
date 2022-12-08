@@ -47,18 +47,19 @@ def move():
         if key==url:
            pass
         elif ((value['x']-my_x==3) and (value['direction']=='E')) or ((value['y']-my_y==3) and (value['direction']=='S')):
-           return 'T'
+           move='T'
         elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3) and (value['direction']=='S')):
-           return 'F'
+           move = 'F'
         elif my_x == 0 and my_y == 0 and direc =='N':
-           return 'R'
+           move = 'R'
         elif my_x !=0 and my_y == 0 and direc =='N':
            if my_x + 1 <= tot_width:
-            return 'R'
+            move = 'R'
            else:
-            return 'L'
+            move= 'L'
         else: 
-            return 'F'
+            move= 'F'
+        yield move
    
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
