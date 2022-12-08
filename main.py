@@ -55,7 +55,7 @@ def move():
         elif my_x !=0 and my_y == 0 and direc =='N':
            if my_x + 1 <= tot_width:
             return "R"
-        else:
+           else:
             return "L"
         else:
             return "F"
