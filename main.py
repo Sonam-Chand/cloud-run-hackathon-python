@@ -42,7 +42,7 @@ def move():
     # Assign Arena width and height to variables
     tot_width=data['arena']['dims'][0]
     tot_ht=data['arena']['dims'][1]
-    print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,x,y,direc,hit_stat,score))
+    print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,my_x,my_y,direc,hit_stat,my_score))
     for key,value in data['arena']['state'].items():
         if key==url:
            pass
