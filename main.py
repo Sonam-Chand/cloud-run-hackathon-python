@@ -50,7 +50,7 @@ def move():
            return 'T'
         elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3) and (value['direction']=='S')):
            return 'F'
-        if my_x == 0 and my_y == 0 and direc =='N':
+        elif my_x == 0 and my_y == 0 and direc =='N':
            return 'R'
         elif my_x !=0 and my_y == 0 and direc =='N':
            if my_x + 1 <= tot_width:
