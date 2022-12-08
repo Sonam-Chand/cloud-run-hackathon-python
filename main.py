@@ -29,7 +29,7 @@ def move():
     request.get_data()
     print("******** testing ************")
     logger.info(request.json)
-    data=request.get_data()
+    data=request.json
     url="https://cloud-run-hackathon-python-c5p6tue2hq-uc.a.run.app"
     x= data['arena']['state'][url]['x']
     y= data['arena']['state'][url]['y']
