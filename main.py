@@ -46,9 +46,9 @@ def move():
     for key,value in data['arena']['state'].items():
         if key==url:
            pass
-        elif ((value['x']-my_x)==3)&& (value['direction']=='E') or ((value['y']-my_y)==3)&& (value['direction']=='S'):
+        elif ((value['x']-my_x==3) and (value['direction']=='E')) or ((value['y']-my_y==3) and (value['direction']=='S')):
            return 'T'
-        elif ((value['x']-my_x)== -3)&& (value['direction']=='E') or ((value['y']-my_y)== -3)&& (value['direction']=='S'):
+        elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3)&& (value['direction']=='S')):
            return 'F'
         elif my_x == 0 and my_y == 0 and direc =='N':
            return "R"
