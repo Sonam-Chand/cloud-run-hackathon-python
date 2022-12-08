@@ -33,6 +33,13 @@ def move():
     request.get_data()
     print("******** testing ************")
     logger.info(request.json)
+    url="https://cloud-run-hackathon-python-c5p6tue2hq-uc.a.run.app"
+    x= arena['state'][url]['x']
+    y= arena['state'][url]['y']
+    direc=arena['state'][url]['direction']
+    hit_stat=arena['state'][url]['wasHit']
+    score=arena['state'][url]['score']
+    print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}' .format(url,x,y,direc,hit_stat,score))
 
     return  moves[random.randrange(len(moves))]
     
