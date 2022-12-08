@@ -31,7 +31,7 @@ def move():
     data=request.json
 
     # Assign user url to a variable
-    url="https://cloud-run-hackathon-python-c5p6tue2hq-uc.a.run.app"
+    url=data['_links']["self"] ["href"]
 
     #Assign user x, y coordinates, direction, hit satus and score to diff variables
     my_x= data['arena']['state'][url]['x']
@@ -39,14 +39,26 @@ def move():
     direc=data['arena']['state'][url]['direction']
     hit_stat=data['arena']['state'][url]['wasHit']
     my_score=data['arena']['state'][url]['score']
+    # Assign Arena width and height to variables
+    tot_width=data['arena']['dims'][0]
+    tot_ht=data['arena']['dims'][1]
    # print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,x,y,direc,hit_stat,score))
     for key,value in data['arena']['state'].items():
         if key==url:
            pass
-        elif abs(value['x']-my_x)==3 or abs(value['y']-my_y)==3:
+        elif ((value['x']-my_x)==3)&& (value['direction']=='E') or ((value['y']-my_y)==3)&& (value['direction']=='S'):
            return 'T'
+        elif ((value['x']-my_x)== -3)&& (value['direction']=='E') or ((value['y']-my_y)== -3)&& (value['direction']=='S'):
+           return 'F'
+        elif my_x == 0 and my_y == 0 and direc =='N':
+           return "R"
+        elif my_x !=0 and my_y == 0 and direc =='N':
+           if my_x + 1 <= tot_width:
+            return "R"
         else:
-            return  moves[random.randrange(len(moves))]
+            return "L"
+        else:
+            return "F"
    
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
