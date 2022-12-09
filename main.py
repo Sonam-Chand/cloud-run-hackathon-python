@@ -37,7 +37,7 @@ def move():
     # Assign Arena width and height to variables
     tot_width=data['arena']['dims'][0]
     tot_ht=data['arena']['dims'][1]
-    print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,my_x,my_y,direc,hit_stat,my_score))
+    
 
     # Create two lists for x values,y values , directions for all the players except you
     xlist=[]
@@ -51,6 +51,7 @@ def move():
             direc=data['arena']['state'][url]['direction']
             hit_stat=data['arena']['state'][url]['wasHit']
             my_score=data['arena']['state'][url]['score']
+            print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,my_x,my_y,direc,hit_stat,my_score))
         else:
             xlist.append(value['x'])
             ylist.append(value['y'])
