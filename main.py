@@ -56,7 +56,7 @@ def move():
             xlist.append(value['x'])
             ylist.append(value['y'])
             player_direc.append(value['direction'])
-    return random.choice(moves)
+    #return random.choice(moves)
     j=0
     k=0
     for i in range(0,len(xlist)):
