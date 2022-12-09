@@ -61,7 +61,7 @@ def move():
     for i in range(0,len(xlist)):
         j=i
         k=i
-        print"********* to test*********")
+        print("********* to test*********")
         if ((xlist[i]-my_x==3) and (direc=='E')) or ((ylist[j]-my_y==3) and (direc=='S')):
             return 'T'
         elif ((xlist[i]-my_x== -3) and (player_direc[k]=='E')) or ((ylist[j]-my_y == -3) and (player_direc[k]=='S')):
