@@ -50,13 +50,13 @@ def move():
             return 'T'
         elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3) and (value['direction']=='S')):
             return = 'F'
-        elif my_x==0 and my_y==0 and direc == 'N' or direc == 'W':
+        elif (my_x==0 and my_y==0) and (direc == 'N' or direc == 'W'):
 	        return = 'R'
-        elif my_x==tot_width and my_y==0 and direc == 'N' or direc == 'E':
+        elif (my_x==tot_width and my_y==0) and (direc == 'N' or direc == 'E'):
 	        return = 'L'
-        elif my_x==0 and my_y==tot_ht and direc == 'S' or direc == 'W':
+        elif (my_x==0 and my_y==tot_ht) and (direc == 'S' or direc == 'W') :
 	        return = 'R'
-        elif my_x==tot_width and my_y==tot_ht and direc == 'S' or direc == 'E':
+        elif (my_x==tot_width and my_y==tot_ht) and (direc == 'S' or direc == 'E'):
 	        return = 'L'
         else:
             return ='F'
