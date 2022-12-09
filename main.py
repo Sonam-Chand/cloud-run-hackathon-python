@@ -62,7 +62,7 @@ def move():
         k=i
         if ((xlist[i]-my_x==3) and (direc=='E')) or ((ylist[j]-my_y==3) and (direc=='S')):
             return 'T'
-        elif ((xlist[i]-my_x== -3) and (player_direc[k]=='E')) or (ylist[j]-my_y == -3) and (player_direc[k]=='S')):
+        elif ((xlist[i]-my_x== -3) and (player_direc[k]=='E')) or ((ylist[j]-my_y == -3) and (player_direc[k]=='S')):
             return 'F'
         elif (my_x==0 and my_y==0) and (direc == 'N' or direc == 'W'):
 	        return 'R'
