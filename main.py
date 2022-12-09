@@ -58,7 +58,7 @@ def move():
 	        return  'R'
         elif (my_x==tot_width and my_y==tot_ht) and (direc == 'S' or direc == 'E'):
 	        return 'L'
-        else:
+        else
             return random.choice(moves)
       
    
