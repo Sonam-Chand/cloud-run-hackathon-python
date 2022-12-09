@@ -33,22 +33,36 @@ def move():
     # Assign user url to a variable
     url=data['_links']["self"] ["href"]
 
-    #Assign user x, y coordinates, direction, hit satus and score to diff variables
-    my_x= data['arena']['state'][url]['x']
-    my_y= data['arena']['state'][url]['y']
-    direc=data['arena']['state'][url]['direction']
-    hit_stat=data['arena']['state'][url]['wasHit']
-    my_score=data['arena']['state'][url]['score']
+
     # Assign Arena width and height to variables
     tot_width=data['arena']['dims'][0]
     tot_ht=data['arena']['dims'][1]
     print("For my url: {}, x coordinates: {}, y coordinates :{}, direction is : {}, hit status is: {}, score is :{}" .format(url,my_x,my_y,direc,hit_stat,my_score))
+
+    # Create two lists for x values,y values , directions for all the players except you
+    xlist=[]
+    ylist=[]
+    player_direc=[]
     for key,value in data['arena']['state'].items():
         if key==url:
-           pass
-        elif ((value['x']-my_x==3) and (direc=='E')) or ((value['y']-my_y==3) and (direc=='S')):
+           #Assign user x, y coordinates, direction, hit satus and score to diff variables 
+            my_x= data['arena']['state'][url]['x']
+            my_y= data['arena']['state'][url]['y']
+            direc=data['arena']['state'][url]['direction']
+            hit_stat=data['arena']['state'][url]['wasHit']
+            my_score=data['arena']['state'][url]['score']
+        else:
+            xlist.append(value['x'])
+            ylist.append(value['y'])
+            player_direc.append(value['direction'])
+    j=0
+    k=0
+    for i in range(0,len(xlist)):
+        j=i
+        k=i
+        if ((xlist[i]-my_x==3) and (direc=='E')) or ((ylist[j]-my_y==3) and (direc=='S')):
             return 'T'
-        elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3) and (value['direction']=='S')):
+        elif ((xlist[i]-my_x== -3) and (player_direc[k]=='E')) or (ylist[j]-my_y == -3) and (player_direc[k]=='S')):
             return 'F'
         elif (my_x==0 and my_y==0) and (direc == 'N' or direc == 'W'):
 	        return 'R'
