@@ -20,7 +20,7 @@ from flask import Flask, request
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 app = Flask(__name__)
-moves = [ 'L', 'R','F']
+moves = [ 'L','T','R','F']
 @app.route("/", methods=['GET'])
 def index():
     return "Let the battle begin!"
