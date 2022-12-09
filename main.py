@@ -49,17 +49,17 @@ def move():
         elif ((value['x']-my_x==3) and (direc=='E')) or ((value['y']-my_y==3) and (direc=='S')):
             return 'T'
         elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3) and (value['direction']=='S')):
-            return = 'F'
+            return 'F'
         elif (my_x==0 and my_y==0) and (direc == 'N' or direc == 'W'):
-	        return = 'R'
+	        return 'R'
         elif (my_x==tot_width and my_y==0) and (direc == 'N' or direc == 'E'):
-	        return = 'L'
+	        return 'L'
         elif (my_x==0 and my_y==tot_ht) and (direc == 'S' or direc == 'W') :
-	        return = 'R'
+	        return  'R'
         elif (my_x==tot_width and my_y==tot_ht) and (direc == 'S' or direc == 'E'):
-	        return = 'L'
+	        return 'L'
         else:
-            return ='F'
+            return 'F'
       
    
 if __name__ == "__main__":
