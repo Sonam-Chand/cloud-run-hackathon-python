@@ -20,7 +20,7 @@ from flask import Flask, request
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 app = Flask(__name__)
-moves = [ 'L', 'R']
+moves = [ 'L', 'R','F']
 @app.route("/", methods=['GET'])
 def index():
     return "Let the battle begin!"
@@ -59,7 +59,7 @@ def move():
         elif (my_x==tot_width and my_y==tot_ht) and (direc == 'S' or direc == 'E'):
 	        return 'L'
         else:
-            return 'F'
+            return random.choice(moves)
       
    
 if __name__ == "__main__":
