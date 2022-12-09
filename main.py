@@ -47,24 +47,20 @@ def move():
         if key==url:
            pass
         elif ((value['x']-my_x==3) and (direc=='E')) or ((value['y']-my_y==3) and (direc=='S')):
-           move='T'
+            return 'T'
         elif ((value['x']-my_x== -3) and (value['direction']=='E')) or ((value['y']-my_y == -3) and (value['direction']=='S')):
-           move = 'F'
-        elif my_x == 0 and my_y == 0 and direc =='N':
-           move = 'R'
-        elif my_x !=0 and my_y == 0 and direc =='N':
-           if my_x + 1 <= tot_width:
-            move = 'R'
-           else:
-            move= 'L'
-        elif my_x!=0 and my_y != 0 and direc =='S':
-           if my_y+ 1 <= tot_ht:
-            move = 'F'
-           else:
-            move= random.choice(moves)
+            return = 'F'
+        elif my_x==0 and my_y==0 and direc == 'N' or direc == 'W':
+	        return = 'R'
+        elif my_x==tot_width and my_y==0 and direc == 'N' or direc == 'E':
+	        return = 'L'
+        elif my_x==0 and my_y==tot_ht and direc == 'S' or direc == 'W':
+	        return = 'R'
+        elif my_x==tot_width and my_y==tot_ht and direc == 'S' or direc == 'E':
+	        return = 'L'
         else:
-            move='F'
-        return move
+            return ='F'
+      
    
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
